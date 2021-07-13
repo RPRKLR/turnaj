@@ -19,11 +19,12 @@ class _FloatingContainerState extends State<FloatingContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
-      width: 200,
+      height: 450,
+      width: 450,
       decoration: BoxDecoration(
           border: Border.all(), borderRadius: BorderRadius.circular(15)),
       child: Stack(
+        alignment: Alignment.center,
         children: [
           Column(
             children: [
@@ -31,21 +32,32 @@ class _FloatingContainerState extends State<FloatingContainer> {
                 padding: EdgeInsets.all(8.0),
                 child: Text(
                   'NEJBLIŽŠI TURNAJ',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(
+                    color: Color(0xFF8D8D8D),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ),
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
                   'TURNAJ 22',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(
+                    color: Color(0xFFFFFFFF),
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
                   'So 07. 07. 2022 v 19:00',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(
+                    color: Color(0xFFFFFFFF),
+                    fontSize: 16,
+                  ),
                 ),
               ),
               TextButton(
@@ -53,7 +65,8 @@ class _FloatingContainerState extends State<FloatingContainer> {
                 child: const Text(
                   'Vice informaci o turnaji >',
                   style: TextStyle(
-                    color: Colors.yellow,
+                    color: Color(0xFFFFD302),
+                    fontSize: 16,
                   ),
                 ),
               ),
@@ -61,15 +74,20 @@ class _FloatingContainerState extends State<FloatingContainer> {
           ),
           Container(
             child: Positioned(
-              top: 130,
+              top: 160,
               child: Column(
                 children: [
                   const Text(
-                      'Date Shower'), // this should be the date shower, I will make a widget for it
+                    'Date Shower',
+                    style: TextStyle(
+                      color: Color(0xFFFFD302),
+                    ),
+                  ), // this should be the date shower, I will make a widget for it
                   Row(
                     children: [
                       ElevatedButton(
                         onPressed: () {},
+                        style: ButtonStyle(),
                         child: Text('Koupit ZZP'),
                       ),
                       ElevatedButton(

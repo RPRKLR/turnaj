@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './widgets/player.dart';
 import './widgets/video.dart';
 import './widgets/floating_container.dart';
+import './widgets/background_and_floatinting_container_combined.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Turnaj',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Color(0x16161616),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -37,10 +39,48 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0x161616),
-      appBar: AppBar(),
-      body: Container(
-        child: FloatingContainer(DateTime.now(), '', ''),
+      backgroundColor: const Color(0xFF161616),
+      body: ListView(
+        children: [
+          BAFCC(),
+          // Image.asset(
+          //   '../../assets/images/tournament.jpg',
+          //   height: 500,
+          // ),
+          // FloatingContainer(DateTime.now(), '', ''),
+          Container(
+            height: 300,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Video('Premium', 'Turnaj 20', 'souboj o trun'),
+                Video('Premium', 'Turnaj 20', 'souboj o trun'),
+                Video('Premium', 'Turnaj 20', 'souboj o trun'),
+              ],
+            ),
+          ),
+          Container(
+            height: 350,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Player('Peter Dvorak', 'Champion'),
+                Player(
+                  'Premium',
+                  'Turnaj 20',
+                ),
+                Player(
+                  'Rajcsányi Ladislav',
+                  'Turnaj 20',
+                ),
+                Player(
+                  'Premium',
+                  'Turnaj 20',
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
       // body: ListView(
       //   scrollDirection: Axis.horizontal,

@@ -8,27 +8,37 @@ class Player extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16),
-      child: Column(
-        children: <Widget>[
-          ClipRRect(
-            borderRadius: BorderRadius.circular(25),
-            child: Image.asset(
-              '../../assets/images/player.jpg',
-              height: 250,
-              width: 150,
+    return GestureDetector(
+      child: Container(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          children: <Widget>[
+            ClipRRect(
+              borderRadius: BorderRadius.circular(25),
+              child: Image.asset(
+                '../../assets/images/player.jpg',
+                height: 250,
+                width: 150,
+              ),
             ),
-          ),
-          Text(
-            name,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-          ),
-          Text(
-            position,
-            style: TextStyle(fontWeight: FontWeight.normal, fontSize: 10),
-          ),
-        ],
+            Text(
+              name,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+                color: Color(0xFFFFFFFF),
+              ),
+            ),
+            Text(
+              position,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 10,
+                color: Color(0xFF8D8D8D),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
